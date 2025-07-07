@@ -13,7 +13,6 @@ class RecuerdoDA {
     dbh = DatabaseHelper();
   }
 
-  // Define a function that inserts items into the database
   Future<void> insert(Recuerdo item) async {
     db ??= await dbh.database;
     item.Id = await dbh.getMaxNumeroOrDefault('recuerdos', 'Id') + 1;
@@ -25,7 +24,6 @@ class RecuerdoDA {
     );
   }
 
-  // A method that retrieves all the items from the table.
   Future<List<Recuerdo>> getAllItems() async {
     db ??= await dbh.database;
     List<Recuerdo> ls = [];

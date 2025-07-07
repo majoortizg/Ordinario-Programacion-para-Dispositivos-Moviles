@@ -85,7 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Imagen/Foto
               r.FotoPath.isNotEmpty
                   ? Container(
                 height: 120,
@@ -101,7 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blueGrey.shade50,
                 child: const Icon(Icons.image, size: 40),
               ),
-              // Título
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
                 child: Text(
@@ -111,7 +109,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              // Descripción
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
@@ -121,7 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              // Latitud y Longitud (puedes ponerlo donde prefieras)
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 2.0),
                 child: Text(
@@ -129,7 +125,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: const TextStyle(fontSize: 10, color: Colors.grey),
                 ),
               ),
-              // Botones de acción
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -185,28 +180,6 @@ class _MyHomePageState extends State<MyHomePage> {
     data = "[ " + data + "]";
     print(data);
   }
-
-  /*Future<void> _uploadRecuerdos() async {
-    SincRecuerdos s = SincRecuerdos();
-    for (Recuerdo r in _recuerdos) {
-      if (r.Sincronizado == 0) {
-        try {
-          r = await s.insert(r);
-          await _recuerdoDA.update(r);
-        } catch (ex) {
-          print("ERROR: ${ex.toString()} para ${r.toJson()}");
-        }
-      } else if (r.Sincronizado == 2) {
-        try {
-          r = await s.update(r);
-          r.Sincronizado = 1;
-          await _recuerdoDA.update(r);
-        } catch (ex) {
-          print("ERROR: ${ex.toString()} para ${r.toJson()}");
-        }
-      }
-    }
-  }*/
 
   Future<void> _uploadRecuerdos() async {
     SincRecuerdos s = SincRecuerdos();

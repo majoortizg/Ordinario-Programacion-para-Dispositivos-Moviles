@@ -48,7 +48,6 @@ class _PreviewPhotoState extends State<PreviewPhoto> {
         _recuerdo.Longitud = position.longitude;
       });
     } catch (e) {
-      // Puedes mostrar un mensaje si lo deseas
       print("No se pudo obtener la ubicación: $e");
     }
   }
@@ -86,8 +85,6 @@ class _PreviewPhotoState extends State<PreviewPhoto> {
               },
             ),
             const SizedBox(height: 16),
-
-            // Foto y cámara
             viewUI(),
             const SizedBox(height: 16),
             ListTile(

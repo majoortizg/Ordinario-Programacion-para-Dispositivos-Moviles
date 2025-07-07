@@ -6,21 +6,6 @@ class SincRecuerdos {
   String server = "http://192.168.1.66:8080/";
   String endpoint = "recuerdo";
 
-  /*Future<Recuerdo> insert(Recuerdo recuerdo) async {
-    String s = jsonEncode(recuerdo.toJson());
-    final response = await http.put(
-      Uri.parse("${server}${endpoint}/insert"),
-      headers: <String, String>{'Content-Type': 'application/json'},
-      body: s,
-    );
-    if (response.statusCode == 200) {
-      recuerdo.Sincronizado = 1;
-      recuerdo.Id = int.parse(response.body);
-      return recuerdo;
-    } else {
-      throw Exception('Failed to insert data');
-    }
-  }*/
   Future<Recuerdo> insert(Recuerdo recuerdo) async {
     String s = jsonEncode(recuerdo.toJson());
 
@@ -35,7 +20,7 @@ class SincRecuerdos {
       recuerdo.Id = int.parse(response.body);
       return recuerdo;
     } else {
-      print("❌ Error insertando recuerdo:");
+      print("Error insertando recuerdo:");
       print("Código de respuesta: ${response.statusCode}");
       print("Cuerpo de respuesta: ${response.body}");
       print("Datos enviados: $s");

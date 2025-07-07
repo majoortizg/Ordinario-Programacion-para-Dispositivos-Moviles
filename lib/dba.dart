@@ -15,7 +15,7 @@ class DatabaseHelper {
 
   Future<void> initDatabase() async {
     _database = await openDatabase(
-      join(await getDatabasesPath(), 'recuerdos_database.db'), // ✅ nombre actualizado
+      join(await getDatabasesPath(), 'recuerdos_database.db'),
       onCreate: (db, version) {
         db.execute(
           'CREATE TABLE recuerdos (Id INTEGER PRIMARY KEY, Nombre TEXT, '
@@ -31,7 +31,7 @@ class DatabaseHelper {
     final String query =
         'SELECT COALESCE(MAX($columnName), 0) AS max_numero FROM $tableName';
 
-    final db = await database; // ✅ se asegura que DB esté inicializada
+    final db = await database;
     final List<Map<String, Object?>> result = await db.rawQuery(query);
 
     if (result.isNotEmpty) {
