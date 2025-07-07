@@ -7,6 +7,7 @@ import 'package:recuerdos_ordinario3/take_photo.dart';
 import 'package:flutter/material.dart';
 import 'package:recuerdos_ordinario3/sync.dart';
 import 'dart:convert';
+import 'dart:io';
 
 import 'recuerdo.dart';
 
@@ -89,8 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ? Container(
                 height: 120,
                 width: double.infinity,
-                child: Image.asset(
-                  r.FotoPath,
+                child: Image.file(
+                  File(r.FotoPath),
                   fit: BoxFit.cover,
                 ),
               )
